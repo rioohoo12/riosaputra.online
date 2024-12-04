@@ -1,12 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my website</title>
-</head>
-<body>
-    <h1>Welcome to my website</h1>
-    <p>hi, my name is rioo</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Zenius Education</title>
+    <link rel="shortcut icon" href="zeniuss.webp" type="image/x-icon" />
+  </head>
+  <body class="font-sans bg-gray-100">
+    <header class="bg-yellow-400">
+      <div class="navbar flex justify-between items-center p-4">
+        <div class="logo flex items-center space-x-2">
+          <img src="zeniuss.webp" alt="Zenius Logo" class="h-10" />
+          <span class="text-xl font-semibold">Zenius</span>
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="text-black-500 hover:text-blue-700"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="biodata.html" class="text-black-500 hover:text-blue-700"
+                >Biodata</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact_us.html"
+                class="text-black-500 hover:text-blue-700"
+                >Contact Us
+                <span class="bg-red-500 text-white text-xs rounded-full px-2"
+                  >NEW</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="posts.html" class="text-black-500 hover:text-black-700"
+                >Post</a
+              >
+            </li>
+            <li>
+              <a
+                href="freepage.html"
+                class="text-black-500 hover:text-black-700"
+                >FreePage</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="search-box flex items-center space-x-2">
+          <input
+            type="text"
+            placeholder="Mau belajar apa hari ini?"
+            class="border px-4 py-2 rounded-lg"
+          />
+          <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+            🔍
+          </button>
+        </div>
+        <a href="#" class="login-btn text-blue-500 hover:text-blue-700"
+          >Login</a
+        >
+      </div>
+    </header>
+
+    <div class="container p-6">
+      <div class="grid grid-cols-7 gap-4">
+        <div class="rounded-lg text-center">
+          <a href="#" class="text-xs">SD</a>
+        </div>
+        <div class="rounded-lg text-center">
+          <a href="#" class="text-xs">SMP</a>
+        </div>
+        <div class="rounded-lg text-center">
+          <a href="#" class="text-xs">SMA (K13R)</a>
+        </div>
+        <div class="rounded-lg text-center">
+          <a href="#" class="text-xs">SMA (Kumer)</a>
+        </div>
+        <div class="rounded-lg text-center px-2 py-1">
+          <a href="#" class="text-xs">Basic Skills</a>
+        </div>
+        <div
+          class="bg-yellow-400 rounded-lg text-center w-16 h-8 flex items-center justify-center"
+        >
+          <a href="#" class="text-xs">UTBK</a>
+        </div>
+        <div class="rounded-lg text-center">
+          <a href="#" class="text-xs">Saintek, Soshum, dan UM</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="materi-img-container p-6 flex space-x-6">
+      <div class="materi-container w-1/4 bg-white p-4 rounded-lg shadow-lg">
+        <div class="side-bar text-lg font-semibold">Materi Belajar</div>
+        <div class="materi-item py-2"><a href="#">Zenius Learning</a></div>
+        <div class="materi-item py-2"><a href="#">Penalaran Umum</a></div>
+        <div class="materi-item py-2">
+          <a href="#">PPU, PBM, dan Literasi dalam Bahasa...</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">Literasi Bahasa Inggris</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">PK & Penalaran Matematika</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">[Kumpulan Soal] Penalaran Umum</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">[Kumpulan Soal] PPU, PBM, dan LBI</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">[Kumpulan Soal] PK & PM</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">[Kumpulan Soal] Literasi dalam Bahasa...</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">Pembahasan Buku Hajar UTBK Edisi 2</a>
+        </div>
+        <div class="materi-item py-2">
+          <a href="#">Soal Hajar UTBK Edisi 1.1</a>
+        </div>
+        <div class="materi-item py-2"><a href="#">Matematika Dasar</a></div>
+      </div>
+      <div class="content w-3/4">
+        <img src="welcome.png" alt="welcome" class="w-full mx-auto" />
+      </div>
+    </div>
+
+    <div class="testimonial text-center py-5">
+      <p class="text-2xl font-semibold">Apa Kata Mereka?</p>
+    </div>
+    <div class="box flex space-x-4 justify-center py-6">
+      <img src="testimoni 1.png" alt="testimoni 1" class="w-1/3" />
+      <img src="testimoni 2.png" alt="testimoni 2" class="w-1/3" />
+      <img src="testimoni 3.png" alt="testimoni 3" class="w-1/3" />
+    </div>
+
+    <div class="ikonik text-center py-6">
+      <p class="text-2xl font-semibold">
+        Kenapa sih mesti belajar online di zenius.net?
+      </p>
+    </div>
+    <div class="features grid grid-cols-3 gap-6 p-6">
+      <div class="feature-item text-center p-4 bg-white rounded-lg shadow-lg">
+        <img src="focus.png" alt="focus" class="mx-auto" />
+        <h2 class="font-semibold text-lg mt-4">Focus on concepts</h2>
+        <p>
+          Belajar buat paham konsep sampe kebayang banget, bukan cuma menghafal
+          rumus atau pake cara cepat. Apalagi dijelasin dulu big picture & cara
+          mikirnya.
+        </p>
+      </div>
+      <div class="feature-item text-center p-4 bg-white rounded-lg shadow-lg">
+        <img src="efektif.png" alt="efektif" class="mx-auto" />
+        <h2 class="font-semibold text-lg mt-4">Efektif</h2>
+        <p>
+          Ga ada lagi cerita belajar di kelas planga-plongo ketinggalan materi.
+          Kalo perlu waktu untuk menyerap materi, tinggal pause atau ulang.
+          Bahkan abis ngerjain soal bisa review materi lagi!
+        </p>
+      </div>
+      <div class="feature-item text-center p-4 bg-white rounded-lg shadow-lg">
+        <img src="ngejelasinnya.png" alt="ngejelasinnya" class="mx-auto" />
+        <h2 class="font-semibold text-lg mt-4">Ngejelasinnya seru!</h2>
+        <p>
+          Tutor2 zenius tuh friendly dan seneng ngajar, jadinya seru abis, ga
+          bikin ngantuk. Kadang2 pada sampe lupa kalo lagi belajar :p
+        </p>
+      </div>
+      <div class="feature-item text-center p-4 bg-white rounded-lg shadow-lg">
+        <img src="bisa diakses.png" alt="bisa diakses" class="mx-auto" />
+        <h2 class="font-semibold text-lg mt-4">Bisa diakses kapan aja</h2>
+        <p>
+          Jelas lah, kalo pengen belajar atau lagi kepepet tinggal buka
+          zenius.net! Tonton deh sampe kenyang.
+        </p>
+      </div>
+      <div class="feature-item text-center p-4 bg-white rounded-lg shadow-lg">
+        <img
+          src="mind-transforming.png"
+          alt="Mind-transforming"
+          class="mx-auto"
+        />
+        <h2 class="font-semibold text-lg mt-4">Mind-transforming!</h2>
+        <p>
+          Zenius ga cuma pengen kalian lolos ujian atau nilai bagus doang, tapi
+          juga pengen kalian cerdas beneran buat bekal di masa depan.
+        </p>
+      </div>
+      <div class="feature-item text-center p-4 bg-white rounded-lg shadow-lg">
+        <img
+          src="yaudahlah gas.png"
+          alt="Yaudah lah, ayo gass"
+          class="mx-auto"
+        />
+        <h2 class="font-semibold text-lg mt-4">gitu...</h2>
+        <p>
+          Mau belajar atau les di mana aja bebas, tapi belajar sendiri buat
+          sampe bikin jago ya sama zenius, iya gak??
+        </p>
+      </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-6">
+      <div class="footer-container flex justify-between items-center px-6">
+        <div class="footer-logo flex items-center space-x-4">
+          <img src="education.png" alt="Zenius Logo" class="h-10" />
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="https://fti.unai.edu/" class="text-white" target="_blank"
+                >FTI UNAI</a
+              >
+            </li>
+            <li>
+              <a href="https://unai.edu/" class="text-white" target="_blank"
+                >Situs web UNAI</a
+              >
+            </li>
+            <li><a href="company.html" class="text-white">Company</a></li>
+            <li>
+              <a href="contact_us.html" class="text-white">Kontak Kami</a>
+            </li>
+            <li>
+              <a href="https://www.zenius.net/" class="text-white"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a href="https://www.zenius.net/blog/" class="text-white">Blog</a>
+            </li>
+            <li>
+              <a href="https://www.zenius.net/blog/" class="text-white"
+                >Ketentuan Penggunaan</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
 </html>

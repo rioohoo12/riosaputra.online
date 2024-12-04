@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="shortcut icon" href="zeniuss.webp" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+      // JavaScript untuk validasi
+      function validateForm(event) {
+        event.preventDefault();
+        
+        let isValid = true;
+        const form = document.getElementById("registration-form");
+        const requiredFields = form.querySelectorAll("[required]");
+        
+        // Periksa setiap input yang wajib diisi
+        requiredFields.forEach((field) => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add("border-red-500");
+            field.nextElementSibling.textContent = "Field ini wajib diisi!";
+          } else {
+            field.classList.remove("border-red-500");
+            field.nextElementSibling.textContent = "";
+          }
+        });
+
+        // Periksa format email
+        const emailField = document.getElementById("email");
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(emailField.value)) {
+          isValid = false;
+          emailField.classList.add("border-red-500");
+          emailField.nextElementSibling.textContent = "Format email tidak valid!";
+        }
+
+        // Periksa format nomor telepon
+        const phoneField = document.getElementById("phone");
+        const phonePattern = /^[0-9]{10,15}$/;
+        if (!phonePattern.test(phoneField.value)) {
+          isValid = false;
+          phoneField.classList.add("border-red-500");
+          phoneField.nextElementSibling.textContent = "Nomor telepon harus berupa angka dan antara 10-15 digit.";
+        }
+
+        // Jika form valid, hapus form dan beri pesan sukses
+        if (isValid) {
+          form.reset();
+          alert("Pendaftaran berhasil!");
+        }
+      }
+
+      // Sorot input yang aktif
+      function highlightField(event) {
+        event.target.classList.add("border-blue-500");
+      }
+
+      function removeHighlight(event) {
+        event.target.classList.remove("border-blue-500");
+      }
+    </script>
+  </head>
+  <body class="font-sans bg-gray-100">
+    <header class="bg-yellow-400">
+      <div class="navbar flex justify-between items-center p-4">
+        <div class="logo flex items-center space-x-2">
+          <img src="zeniuss.webp" alt="Logo" class="h-10" />
+          <span class="text-xl font-semibold">Zenius</span>
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-black-500 hover:text-blue-700">Home</a></li>
+            <li><a href="biodata.html" class="text-black-500 hover:text-blue-700">Biodata</a></li>
+            <li><a href="contact_us.html" class="text-black-500 hover:text-blue-700">Contact Us <span class="bg-red-500 text-white text-xs rounded-full px-2">NEW</span></a></li>
+            <li><a href="posts.html" class="text-black-500 hover:text-black-700">Post</a></li>
+            <li><a href="freepage.html" class="text-black-500 hover:text-black-700">FreePage</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container mx-auto p-8">
+      <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-center mb-6">Registration Form</h1>
+        <form id="registration-form" action="#" method="post" onsubmit="validateForm(event)" class="space-y-4">
+          
+          <!-- Nama Lengkap -->
+          <div class="form-group">
+            <label for="full-name" class="block text-sm font-semibold">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Nomor Induk Mahasiswa (NIM) -->
+          <div class="form-group">
+            <label for="nim" class="block text-sm font-semibold">Student Identification Number (NIM):</label>
+            <input type="text" id="nim" name="nim" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Alamat Email -->
+          <div class="form-group">
+            <label for="email" class="block text-sm font-semibold">Email Address:</label>
+            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Fakultas/Jurusan -->
+          <div class="form-group">
+            <label for="faculty" class="block text-sm font-semibold">Faculty/Major:</label>
+            <select id="faculty" name="faculty" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)">
+              <option value="">Select Faculty/Major</option>
+              <option value="Fakultas Teknik Informatika">Faculty of Philosophy</option>
+              <option value="Fakultas Ekonomi">Faculty of Economics</option>
+              <option value="Fakultas Hukum">Faculty of Philosophy</option>
+              <option value="Fakultas Kedokteran">Fakultas Kedokteran</option>
+            </select>
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Tanggal Lahir -->
+          <div class="form-group">
+            <label for="birthdate" class="block text-sm font-semibold">Date of Birth</label>
+            <input type="date" id="birthdate" name="birthdate" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Jenis Kelamin -->
+          <div class="form-group">
+            <label class="block text-sm font-semibold">Gender:</label>
+            <div class="flex space-x-4">
+              <div>
+                <input type="radio" id="male" name="gender" value="male" class="mr-2" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+                <label for="male" class="text-sm">Men</label>
+              </div>
+              <div>
+                <input type="radio" id="female" name="gender" value="female" class="mr-2" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+                <label for="female" class="text-sm"> Women</label>
+              </div>
+            </div>
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Nomor Telepon -->
+          <div class="form-group">
+            <label for="phone" class="block text-sm font-semibold">Phone Number:</label>
+            <input type="text" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)" />
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <!-- Alamat -->
+          <div class="form-group">
+            <label for="address" class="block text-sm font-semibold">Address:</label>
+            <textarea id="address" name="address" rows="4" class="w-full p-3 border border-gray-300 rounded-lg" required onfocus="highlightField(event)" onblur="removeHighlight(event)"></textarea>
+            <span class="text-red-500 text-xs"></span>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-6">
+      <div class="footer-container flex justify-between items-center px-6">
+        <div class="footer-logo flex items-center space-x-2">
+          <img src="education.png" alt="Logo" class="h-10" />
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="https://fti.unai.edu/" class="text-white" target="_blank">FTI UNAI</a></li>
+                <li><a href="https://unai.edu/" class="text-white" target="_blank">Situs web UNAI</a></li>
+                <li><a href="company.html" class="text-white">Company</a></li>
+                <li><a href="contact_us.html" class="text-white">Kontak Kami</a></li>
+                <li><a href="https://www.zenius.net/" class="text-white">Tentang Kami</a></li>
+                <li><a href="https://www.zenius.net/blog/" class="text-white">Blog</a></li>
+                <li><a href="https://www.zenius.net/blog/" class="text-white">Ketentuan Penggunaan</a></li>
+              </ul>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
